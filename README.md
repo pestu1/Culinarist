@@ -1,2 +1,2 @@
 # Culinarist
-Sovellusohjelmointi harjoitustyö Horkka
+Sovellusohjelmointi 23 harjoitustyö Horkka PTIVIS22A
