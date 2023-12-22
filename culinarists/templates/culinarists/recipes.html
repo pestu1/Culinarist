@@ -1,0 +1,14 @@
+{% extends 'culinarists/base.html' %}
+
+{% block content %}
+    <p>Recipes</p>
+    <a href="{% url 'culinarists:new_recipe' %}">Add a new recipe</a>
+    {% for recipe in recipes %}
+            <h3>{{ recipe.meal.name }}</h3>
+            <p>Preparation: {{ recipe.preparation }}</p>
+            <p>Date Added: {{ recipe.date_added }}</p>
+            <a href="{% url 'culinarists:edit_recipe' recipe_id=recipe.id %}">Edit recipe</a>
+        <hr>
+    {% endfor %}
+{% endblock %}
+

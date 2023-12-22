@@ -1,0 +1,11 @@
+{% extends "culinarists/base.html" %}
+
+{% block page_header %}
+    <div class="jumbotron">
+        <h1 class="display-3">What was that meal?</h1>
+
+        <p class="lead">With Culinarist diary you can record the most delicious (or the ones that were not so) meals you have had. <br> Is your recipe book full of scrap. No worries! Save them to Culinarist Diary's recipe page. So you can keep up with your recipies and other people can test your stuff too.<br>Want to try something new? dig the recepies page for a new delicacy that other users have saved!</p>
+        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+            role="button">Register &raquo;</a>
+    </div>
+{% endblock page_header %}

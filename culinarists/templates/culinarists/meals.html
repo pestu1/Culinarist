@@ -1,0 +1,18 @@
+{% extends "culinarists/base.html" %}
+{% block content %}
+
+    <p>Meals</p>
+        <ul>
+            {% for meal in meals %}
+                <li>
+                    <a href="{% url 'culinarists:meal' meal.id %}">{{ meal }}</a>
+                </li>
+            {% empty %}
+                <li>No meals have been added yet.</li>
+            {% endfor %}
+        </ul>
+        
+        <a href="{% url 'culinarists:new_meal' %}">Add a new meal</a>
+        
+{% endblock content %}
+

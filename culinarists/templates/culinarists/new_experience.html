@@ -1,0 +1,12 @@
+{% extends "culinarists/base.html" %}
+{% block content %}
+    <p><a href="{% url 'culinarists:meal' meal.id %}">{{ meal }}</a></p>
+    
+    <p>Add a new experience:</p>
+    <form action="{% url 'culinarists:new_experience' meal.id %}" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name='submit'>Add experience</button>
+    </form>
+
+{% endblock content %}

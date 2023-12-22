@@ -1,0 +1,29 @@
+{% extends 'culinarists/base.html' %}
+
+{% block content %}
+
+<p>Meal: {{ meal }}</p>
+
+<p>Allergens: {{ meal.allergens }}</p>
+
+
+<p>Experiences:</p>
+<p><a href="{% url 'culinarists:new_experience' meal.id %}">Add new experience</a></p>
+
+    <ul>
+        {% for experience in experiences %}
+            <li>
+                <p>{{ experience.date_added|date:'M d, Y H:i' }}</p>
+                <p>{{ experience.text|linebreaks }}</p>
+                <p>Rating: {{ experience.rating }}</p>
+                <p><a href="{% url 'culinarists:edit_experience' experience.id %}">Edit experience</a></p>
+            </li>
+        {% empty %}
+            <li>No experiences in this meal.</li>
+        {% endfor %}
+
+    </ul>
+
+{% endblock content %}
+
+

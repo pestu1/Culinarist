@@ -1,0 +1,11 @@
+{% extends 'culinarists/base.html' %}
+
+{% block content %}
+    <h2>Lisää uusi resepti</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Lisää resepti</button>
+    </form>
+{% endblock %}
+

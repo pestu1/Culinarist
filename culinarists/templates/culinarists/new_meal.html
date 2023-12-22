@@ -1,0 +1,14 @@
+{% extends "culinarists/base.html" %}
+{% block content %}
+    <p>Add a new meal:</p>
+    <form action="{% url 'culinarists:new_meal' %}" method='post'>
+        {% csrf_token %}
+        <label for="{{ form.name.id_for_label }}">Name:</label>
+        {{ form.name }}
+        <div>
+        <label for="{{ form.allergens.id_for_label }}">Allergens:</label>
+        {{ form.allergens }}
+        </div>
+        <button name="submit">Add meal</button>
+    </form>
+{% endblock content %}
